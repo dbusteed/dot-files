@@ -1,0 +1,67 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "blocks": [
+    {
+      "alignment": "right",
+      "segments": [
+        {
+          "background": "#424242",
+          "foreground": "#43CCEA",
+          "leading_diamond": " \ue0b6",
+          "properties": {
+            "branch_icon": ""
+          },
+          "style": "diamond",
+          "template": "{{ .HEAD }}",
+          "trailing_diamond": "\ue0b4",
+          "type": "git"
+        },
+        {
+          "background": "#424242",
+          "foreground": "#4eb8ff",
+          "type": "time",
+          "style": "diamond",
+          "properties": {
+            "time_format": "15:04:05"
+          },
+          "template": "{{ .CurrentDate | date .Format }} ",
+          "leading_diamond": " \ue0b6"
+        },
+        {
+          "background": "#424242",
+          "foreground": "#9B6BDF",
+          "foreground_templates": [
+            "{{if eq \"Charging\" .State.String}}#4caf50{{end}}",
+            "{{if eq \"Discharging\" .State.String}}#ff5722{{end}}",
+            "{{if eq \"Full\" .State.String}}#4caf50{{end}}"
+          ],
+          "style": "diamond",
+          "template": "{{ if not .Error }}{{ .Percentage }}%{{ end }}{{ .Error }}",
+          "leading_diamond": "",
+          "trailing_diamond": "\ue0b4",
+          "type": "battery"
+        }
+      ],
+      "type": "rprompt"
+    },
+    {
+      "alignment": "left",
+      "segments": [
+        {
+          "background": "#424242",
+          "foreground": "#3EC669",
+          "leading_diamond": "\n\ue0b6",
+          "properties": {
+            "style": "folder"
+          },
+          "style": "diamond",
+          "template": "\ue5ff {{ .Path }}",
+          "trailing_diamond": "\ue0b4 ",
+          "type": "path"
+        }
+      ],
+      "type": "prompt"
+    }
+  ],
+  "version": 2
+}

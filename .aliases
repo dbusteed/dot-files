@@ -1,0 +1,10 @@
+alias ipy="ipython"
+alias jl="jupyter lab"
+alias q="exit"
+alias o="xdg-open"
+alias R="R --no-save"
+alias g="grep -v grep | grep"
+alias pping="ping -c 1 google.com"
+alias dk="docker"
+alias clip="xargs echo -n | xclip -sel c"  # copy without newlines (good for one-liners)
+alias cclip="xclip -sel c"                 # copy with newlines (good for file contents)
