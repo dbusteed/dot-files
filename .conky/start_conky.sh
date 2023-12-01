@@ -1,4 +1,4 @@
 #!/bin/bash
 killall conky
-sleep 10
+sleep 5
 conky -c ~/.conky/conky.conf
